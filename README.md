@@ -1,5 +1,8 @@
 # Pommes_Engine_Kernel_Driver
-Pommes Engine — Personal fork of Cheat Engine 7.5. Fully rebranded from source: all names, strings, binaries, and resources renamed. Custom kernel driver written and compiled from scratch with MSVC/WDK. Main executable processed through VMProtect. Built with Lazarus/FPC. For personal use and local testing only.
+
+Personal fork of Cheat Engine 7.5 with full source-level rebranding (names, strings, binaries, resources).
+Includes a custom kernel driver written from scratch using MSVC/WDK.
+Compatible with major anti-cheat systems (e.g., Easy Anti-Cheat, BattlEye). In some cases (e.g., League of Legends), the kernel driver is not necessary.
 
 
 # 🍟 Pommes Engine
@@ -181,3 +184,45 @@ This project is based on [Cheat Engine](https://github.com/cheat-engine/cheat-en
 - Build toolchain: Lazarus IDE, Free Pascal, Microsoft Visual Studio / WDK
 - Packing: VMProtect
 - Hex editing: [HxD](https://mh-nexus.de/en/hxd/)
+
+
+## How to Load a Custom Kernel Driver
+
+To load a custom-written driver on Windows 11 with Secure Boot enabled, you normally need Microsoft's approval (WHQL signing). To bypass DSE (Driver Signature Enforcement) during development/testing, you can use the following tool before booting into Windows:
+
+- **Tool:** [EfiGuard by Mattiwatti](https://github.com/Mattiwatti/EfiGuard)
+
+### What EfiDSEFix Does
+
+| Command              | Effect                                                                 |
+|----------------------|------------------------------------------------------------------------|
+| `EfiDSEFix.exe -d`   | **Disables** DSE — Windows stops verifying driver signatures           |
+| `EfiDSEFix.exe -e`   | **Re-enables** DSE — Windows enforces driver signature verification again |
+
+> Both changes apply to the **current boot session only**. After a reboot, DSE is active again.
+
+### Setup
+
+After setting up EfiGuard correctly, you should see a screen with green text during boot — this confirms it is working.
+
+### Usage (CMD as Administrator)
+
+1. Navigate to the EfiGuard directory:
+```cmd
+   cd C:\Users\<YourUser>\Downloads\EfiGuard-v1.4\EfiGuard-v1.4\
+```
+
+2. **Disable** Driver Signature Enforcement:
+```cmd
+   EfiDSEFix.exe -d
+```
+
+3. Load your custom driver.
+
+4. **Re-enable** Driver Signature Enforcement:
+```cmd
+   EfiDSEFix.exe -e
+```
+
+> ⚠️ **Note:** This method is intended for development and testing purposes only.
+> Do not use on production systems. DSE exists to protect system integrity.
