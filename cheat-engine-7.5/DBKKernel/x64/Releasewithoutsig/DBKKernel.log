@@ -1,0 +1,109 @@
+﻿  Building 'DBKKernel' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Releasewithoutsig\DBK64.inf
+  Stamping [Version] section with DriverVer=04/19/2026,18.7.24.35
+C:\Users\l\Desktop\cheat-engine-7.5-source\cheat-engine-7.5\DBKKernel\DBK64.inf(5-5): warning 1324: [Version] section should specify PnpLockdown=1.
+  Assembling amd64\dbkfunca.asm...
+  Assembling amd64\debuggera.asm...
+  Assembling amd64\noexceptionsa.asm...
+  Assembling amd64\ultimapa.asm...
+  Assembling amd64\vmxhelpera.asm...
+  Assembling amd64\vmxoffloada.asm...
+  DBKDrvr.c
+  DBKFunc.c
+  debugger.c
+  deepkernel.c
+  interruptHook.c
+  IOPLDispatcher.c
+  memscan.c
+  noexceptions.c
+  processlist.c
+  threads.c
+  ultimap.c
+  ultimap2.c
+  apic.c
+  vmxhelper.c
+  vmxoffload.c
+  Code wird generiert...
+  DBKKernel.vcxproj -> C:\Users\l\Desktop\cheat-engine-7.5-source\cheat-engine-7.5\Cheat Engine\bin\pommes64.sys
+  
+  The following certificates were considered:
+      Issued to: WDKTestCert l,134210884331602236
+  
+      Issued by: WDKTestCert l,134210884331602236
+  
+      Expires:   Sat Apr 19 02:00:00 2036
+  
+      SHA1 hash: F48B4FB5F1D0B53F3195F7DED68517106EEA4F57
+  
+  
+      Issued to: 8d852f4f-146e-4034-9f06-03c2f51339a1
+  
+      Issued by: MS-Organization-Access
+  
+      Expires:   Mon Feb 18 10:59:08 2036
+  
+      SHA1 hash: DD9A341F01D8007877712A1E74CA920B98D53B35
+  
+  
+      Issued to: S-1-5-21-2556080709-1797445418-1463137518-1001/4a192fe2-046e-46e6-b240-53dd2ef72be7/login.windows.net/31629832-4ac1-42f8-ab78-c6b700b61dfd/Gottschlich.Louis.16384@my.dbb-lippe.de
+  
+      Issued by: S-1-5-21-2556080709-1797445418-1463137518-1001/4a192fe2-046e-46e6-b240-53dd2ef72be7/login.windows.net/31629832-4ac1-42f8-ab78-c6b700b61dfd/Gottschlich.Louis.16384@my.dbb-lippe.de
+  
+      Expires:   Mon Feb 21 07:49:23 2056
+  
+      SHA1 hash: D48F0B40A5F5478CFB8558920FABA31FFA765BD3
+  
+  
+      Issued to: 39eceff1-a15c-4d0a-bb27-315f1b872972
+  
+      Issued by: MS-Organization-Access
+  
+      Expires:   Tue Feb 26 10:39:55 2036
+  
+      SHA1 hash: 3DE12BAC156FCD837D125B53CEBF5B14D96E6D47
+  
+  
+      Issued to: localhost
+  
+      Issued by: localhost
+  
+      Expires:   Wed Apr 14 21:10:33 2027
+  
+      SHA1 hash: 088A7FE45DD29A787931611FD4987F356E4FE573
+  
+  
+      Issued to: WDKTestCert l,134210880352105005
+  
+      Issued by: WDKTestCert l,134210880352105005
+  
+      Expires:   Sat Apr 19 02:00:00 2036
+  
+      SHA1 hash: 00199584835F57B08382FB41D72E50ED070E06A3
+  
+  
+  After EKU filter, 2 certs were left.
+  After expiry filter, 2 certs were left.
+  After Hash filter, 1 certs were left.
+  After Private Key filter, 1 certs were left.
+  The following certificate was selected:
+      Issued to: WDKTestCert l,134210884331602236
+  
+      Issued by: WDKTestCert l,134210884331602236
+  
+      Expires:   Sat Apr 19 02:00:00 2036
+  
+      SHA1 hash: F48B4FB5F1D0B53F3195F7DED68517106EEA4F57
+  
+  
+  Done Adding Additional Store
+  Successfully signed: C:\Users\l\Desktop\cheat-engine-7.5-source\cheat-engine-7.5\Cheat Engine\bin\pommes64.sys
+  
+  
+  Number of files successfully Signed: 1
+  
+  Number of warnings: 0
+  
+  Number of errors: 0
+  
+  Sign the CE driver
+  Signing skipped (test build)

@@ -1,0 +1,79 @@
+;
+; pommes64.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=pommes64.cat
+DriverVer = 04/19/2026,18.7.24.35
+
+[DestinationDirs]
+DefaultDestDir = 12
+pommes64_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+pommes64.sys  = 1,,
+WdfCoInstaller01009.dll=1 ; make sure the number matches with SourceDisksNames
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%pommes64.DeviceDesc%=pommes64_Device, Root\pommes64 ; TODO: edit hw-id
+
+[pommes64_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+pommes64.sys
+
+;-------------- Service installation
+[pommes64_Device.NT.Services]
+AddService = pommes64,%SPSVCINST_ASSOCSERVICE%, pommes64_Service_Inst
+
+; -------------- pommes64 driver install sections
+[pommes64_Service_Inst]
+DisplayName    = %pommes64.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\pommes64.sys
+
+;
+;--- pommes64_Device Coinstaller installation ------
+;
+
+[pommes64_Device.NT.CoInstallers]
+AddReg=pommes64_Device_CoInstaller_AddReg
+CopyFiles=pommes64_Device_CoInstaller_CopyFiles
+
+[pommes64_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[pommes64_Device_CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[pommes64_Device.NT.Wdf]
+KmdfService =  pommes64, pommes64_wdfsect
+[pommes64_wdfsect]
+KmdfLibraryVersion = 1.9
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Pommes Engine" ;TODO: Replace with your manufacturer name
+ClassName="System" ; TODO: edit ClassName
+DiskName = "pommes64 Installation Disk"
+pommes64.DeviceDesc = "pommes64 Device"
+pommes64.SVCDESC = "pommes64 Service"
