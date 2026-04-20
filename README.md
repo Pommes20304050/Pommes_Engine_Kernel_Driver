@@ -4,6 +4,8 @@ Personal fork of Cheat Engine 7.5 with full source-level rebranding (names, stri
 Includes a custom kernel driver written from scratch using MSVC/WDK.
 Compatible with major anti-cheat systems (e.g., Easy Anti-Cheat, BattlEye). In some cases (e.g., League of Legends), the kernel driver is not necessary.
 
+Tutoriel How it's done:
+https://www.youtube.com/watch?v=_auePp1nTHs&t=1946s
 
 # 🍟 Pommes Engine
 
